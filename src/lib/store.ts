@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counter from "../feature/counterSlice";
+import counter from "@/feature/counterSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore, PersistConfig } from "redux-persist";
 
