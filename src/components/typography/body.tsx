@@ -8,7 +8,7 @@ type Props = {
 
 export const P = forwardRef<HTMLParagraphElement, Props>(({ children, className, ...props }, ref) => {
   return (
-    <p ref={ref} className={cn("leading-7 [&:not(:first-child)]:mt-6", className)} {...props}>
+    <p ref={ref} className={cn("leading-7", className)} {...props}>
       {children}
     </p>
   );
