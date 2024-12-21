@@ -18,7 +18,7 @@ const Page = () => {
   };
 
   return (
-    <Container>
+    <Container topPadding>
       <H2>Add Expense</H2>
       <AddExpenseForm onSubmit={handleAddExpense} />
     </Container>

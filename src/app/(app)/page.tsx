@@ -1,9 +1,13 @@
 import { Card } from "@/components/common/card";
 import { Container } from "@/components/common/container";
 import { H2 } from "@/components/typography/headings";
+import { Avatar } from "@/components/common/avatar";
 import { formatCurrency } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
+import { Large, Lead, P } from "@/components/typography/body";
+import { Button } from "@/components/ui/button";
+import { Plus } from "lucide-react";
 
 const Page = () => {
   const expenses = [
@@ -29,22 +33,27 @@ const Page = () => {
     },
   ];
   return (
-    <Container>
-      <div>
+    <Container topPadding>
+      <div className="flex justify-between">
         <H2>Expenses</H2>
-        <Link href="/add">Add</Link>
+        <Link href="/add">
+          <Button size="sm">
+            <Plus />
+            Add
+          </Button>
+        </Link>
       </div>
       <div className="grid grid-cols-1 gap-4">
         {expenses.map((expense, index) => (
           <Card key={index} className="flex justify-between">
-            <div className="flex items-center">
-              <img src={expense.whoPaid.avatar} alt={expense.whoPaid.name} className="w-12 h-12 rounded-full" />
-              <div className="ml-4">
-                <h3 className="text-lg font-semibold">{expense.whoPaid.name}</h3>
-                <p className="text-gray-500">Paid for {expense.name}</p>
-              </div>
+            <div>
+              <Large className="font-semibold">{formatCurrency(expense.amount)}</Large>
+              <P>{expense.name}</P>
             </div>
-            <p className="text-lg font-semibold">{formatCurrency(expense.amount)}</p>
+            <div className="flex gap-2 align-middle my-auto">
+              <P className="my-auto">{expense.whoPaid.name}</P>
+              <Avatar size="xs" src={expense.whoPaid.avatar} />
+            </div>
           </Card>
         ))}
       </div>
