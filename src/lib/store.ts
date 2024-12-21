@@ -4,7 +4,7 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore, PersistConfig } from "redux-persist";
 
 const persistConfig: PersistConfig<any> = {
-  key: "root",
+  key: "splitApp",
   storage,
   version: 1,
 };

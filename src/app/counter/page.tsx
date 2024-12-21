@@ -24,7 +24,7 @@ export default function Home() {
 
         <div className="flex justify-center space-x-4">
           <Button onClick={() => dispatch(increment())}>Increment</Button>
-          <Button onClick={() => dispatch(decrement())}>sss</Button>
+          <Button onClick={() => dispatch(decrement())}>Decrement</Button>
           <Button onClick={() => dispatch(incrementByAmount(5))}>Increment by 5</Button>
         </div>
       </Card>
