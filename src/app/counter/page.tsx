@@ -33,7 +33,7 @@ export default function Home() {
             Increment
           </Button>
           <Button onClick={() => dispatch(decrement())}>
-            sss
+            Decrement
           </Button>
           <Button onClick={() => dispatch(incrementByAmount(5))} >
             Increment by 5
